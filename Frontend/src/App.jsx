@@ -6,13 +6,11 @@ import RegisterPage from './pages/RegisterPage'
 import axios from 'axios'
 import { UserContextProvider } from './UserContext'
 import AccountPage from './pages/AccountPage'
-import 'dotenv/config'
 axios.defaults.withCredentials=false
 axios.defaults.baseURL='https://devtasks-backend2.onrender.com'
 
 
 export default function App(){
-  
   return (
     <UserContextProvider>
       <Routes>
