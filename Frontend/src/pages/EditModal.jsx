@@ -22,6 +22,17 @@ export default function EditModal({task,tasks,setTasks}) {
 
     const handleUpdate = async (ev)=>{
         ev.preventDefault();
+        let date1 = new Date(date);
+        let date2 = new Date();
+        if (!title || !date) {
+            alert('Please enter Title and Due Date');
+            return;
+        }
+        else if(date1<date2){
+            alert('Please enter a valid date');
+            return;
+        
+        }
         try {
             const response= await axios.post('/updatetask',{
                 task:task,
