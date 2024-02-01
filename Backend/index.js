@@ -31,7 +31,7 @@ app.use(cookieParser())
 app.use(express.json())
 app.use(cors({
     credentials:true,
-    origin:'https://dev-tasks-final.vercel.app/',
+    origin:'https://dev-tasks-final.vercel.app',
     }
 ))
 
