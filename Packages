@@ -1,0 +1,16 @@
+backend:
+express
+mongoose
+cors
+jsonwebtoken
+bcryptjs  
+dotenv
+aws-sdk
+cookie-parser
+
+
+frontend:
+tailwind
+axios
+react-router-dom
+react-responsive-modal
