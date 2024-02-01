@@ -50,9 +50,9 @@ app.post('/register',async (req, res) => {
             email: email,
             password: bcrypt.hashSync(password,bcryptSalt),
         })
-        res.json(userDoc)
+        res.json(userDoc).header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');
     } catch (error) {
-        res.status(422).json('error')
+        res.status(422).json('error').header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');
     }
 })
 
@@ -65,16 +65,16 @@ app.post('/login', async (req, res) => {
             if(passOk){
                 jwt.sign({email:userDoc.email,id:userDoc._id,name:userDoc.name},jwtSecret,{},(err,token) => {
                     if(err) throw err;
-                    res.cookie('token', token).json(userDoc)
+                    res.cookie('token', token).json(userDoc).header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');
                 })
             }
-            else res.status(422).json('error')
+            else res.status(422).json('error').header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');
         }
         else {
-            res.status(422).json('error')
+            res.status(422).json('error').header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');
         }
     } catch (error) {
-        res.status(500).json('error')
+        res.status(500).json('error').header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');
     }
 })
 
@@ -85,9 +85,9 @@ app.get('/profile',(req,res)=>{
             if(err)throw err;
             try {
                 const {name,email,_id} =await User.findById(data.id);
-                res.json({name,email,_id});
+                res.json({name,email,_id}).header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');
             } catch (error) {
-                res.json(null);
+                res.json(null).header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');;
             }
         })
         
@@ -95,7 +95,7 @@ app.get('/profile',(req,res)=>{
 })
 
 app.post('/logout',(req, res)=>{
-    res.cookie('token','').json(true);
+    res.cookie('token','').json(true).header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');;
 })
 
 app.post('/addtask',async (req,res)=>{
@@ -122,11 +122,11 @@ app.post('/addtask',async (req,res)=>{
         };
         await docClient.put(params, (err,data)=>{
             if(err)throw err;
-            res.json('Task Add')
+            res.json('Task Add').header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');
         })
         
     } catch (error) {
-        res.status(422).json('err')
+        res.status(422).json('err').header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');
     }
 })
 
@@ -154,10 +154,10 @@ app.get('/dataretreival',async (req,res)=>{
         await docClient.scan(params,(err,data)=>{
             if(err) throw err;
             
-            res.json(data.Items)
+            res.json(data.Items).header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');
         })
     } catch (error) {
-        res.status(422).json('err');
+        res.status(422).json('err').header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');
     }
 })
 
@@ -184,7 +184,7 @@ app.post('/taskdone',async (req, res)=>{
             console.error('Unable to update item. Error JSON:', JSON.stringify(err, null, 2));
         } else {
             console.log('UpdateItem succeeded:', JSON.stringify(data, null, 2));
-            res.json(data);
+            res.json(data).header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');
         }
     });
     
@@ -205,7 +205,7 @@ app.post('/taskdelete',async (req, res)=>{
             console.error('Unable to update item. Error JSON:', JSON.stringify(err, null, 2));
         } else {
             console.log('UpdateItem succeeded:', JSON.stringify(data, null, 2));
-            res.json(data);
+            res.json(data).header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');
         }
     });
     
@@ -239,7 +239,7 @@ app.post('/updatetask',async (req, res)=>{
             console.error('Unable to update item. Error JSON:', JSON.stringify(err, null, 2));
         } else {
             console.log('UpdateItem succeeded:', JSON.stringify(data, null, 2));
-            res.json(data);
+            res.json(data).header('Access-Control-Allow-Origin', 'https://dev-tasks-final.vercel.app');
         }
     });
     
