@@ -30,7 +30,8 @@ mongoose.connect(process.env.Mongo_URI)
 app.use(cookieParser())
 app.use(express.json())
 app.use(cors({
-    origin:'*',
+    credentials:true,
+    origin:'https://dev-tasks-final.vercel.app/',
     }
 ))
 

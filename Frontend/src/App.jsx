@@ -6,7 +6,7 @@ import RegisterPage from './pages/RegisterPage'
 import axios from 'axios'
 import { UserContextProvider } from './UserContext'
 import AccountPage from './pages/AccountPage'
-axios.defaults.withCredentials=false
+axios.defaults.withCredentials=true
 axios.defaults.baseURL='https://devtasks-backend2.onrender.com'
 
 
