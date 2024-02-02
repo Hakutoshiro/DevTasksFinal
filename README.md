@@ -69,4 +69,12 @@ Create a `.env` file in the root directory and add the following variables:
 -   **package.json**: Defines project dependencies and scripts for managing the application.
     
 
+
+## Screenshots
+![Screenshot (30)](https://github.com/Hakutoshiro/DevTasks/assets/89139969/30200fa7-d74b-40da-b954-1286dedce6f4)
+ ![Screenshot (31)](https://github.com/Hakutoshiro/DevTasks/assets/89139969/f4cdce03-8852-4e71-bcd2-c260ccc6b42a)
+![Screenshot (32)](https://github.com/Hakutoshiro/DevTasks/assets/89139969/3af63007-ce6f-4043-9f2e-4f1b79e92fb5)
+![Screenshot (33)](https://github.com/Hakutoshiro/DevTasks/assets/89139969/152f6891-6e1e-4ddb-b872-05a134c945ad)
+![Screenshot (34)](https://github.com/Hakutoshiro/DevTasks/assets/89139969/77b0d156-5cbc-4d30-ba3a-3ecf79844c43)
+![Screenshot (35)](https://github.com/Hakutoshiro/DevTasks/assets/89139969/76188453-a6d5-4b74-90f0-818ee5713379)
  
