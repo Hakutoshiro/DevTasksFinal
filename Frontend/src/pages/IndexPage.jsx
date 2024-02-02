@@ -79,7 +79,7 @@ export default function IndexPage() {
                         <textarea name="description" cols="30" rows="3" value={description} onChange={ev => setDescription(ev.target.value)}
                         className=" resize-none" maxLength={220} ></textarea>
                         <div>
-                            <label htmlFor="dueDate">Due Date and Time</label>
+                            <label htmlFor="dueDate">Due Date</label>
                             <br />
                             <input type="date" name="dueDate" value={date} onChange={ev => setDate(ev.target.value)} />
                         </div>
