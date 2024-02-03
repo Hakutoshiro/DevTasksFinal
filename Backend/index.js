@@ -60,7 +60,7 @@ app.post('/login', async (req, res) => {
             if(passOk){
                 jwt.sign({email:userDoc.email,id:userDoc._id,name:userDoc.name},jwtSecret,{},(err,token) => {
                     if(err) res.json('Unable to login');
-                    res.cookie('token', token).json(userDoc)
+                    res.cookie('token', token).json({userDoc,login})
                 })
             }
             else res.status(422).json('error')
@@ -73,9 +73,8 @@ app.post('/login', async (req, res) => {
     }
 })
 
-app.get('/profile',(req,res)=>{
-    const {token} = req.cookies
-    
+app.post('/profile',(req,res)=>{
+    let {token} = req.cookies!==undefined&&req.cookies?req.cookies :req.body;
     if(token){
         jwt.verify(token,jwtSecret,{},async (err,data) =>{
             if(err)res.json("Data retreival failed('/profile')");
