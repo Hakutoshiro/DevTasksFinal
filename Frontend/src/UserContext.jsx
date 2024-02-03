@@ -7,9 +7,7 @@ export function UserContextProvider({children}){
     const [ready,setReady]= useState(false);  
     const [fetchAgain, setFetchAgain]= useState(true);  
     const getUser =async () =>{
-        const cookies = document.cookie.split('; ');
-        const token = cookies.find(row => row.startsWith('token')).split('=')[1];
-        const {data}=await axios.post('/profile',{token:token})
+        const {data}=await axios.get('/profile')
         if(data)
         {
             setUser(data);

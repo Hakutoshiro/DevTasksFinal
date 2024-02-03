@@ -17,9 +17,7 @@ export default function LoginPage(){
         try {
             const {data} =await axios.post('/login',{email, password})
             alert('Login successful')
-            const jwt = data.token;
-            document.cookie = `token=${jwt};`;
-            setUser(data.userDoc)
+            setUser(data)
             setReady(true);
             setRedirect(true);
         } catch (error) {
