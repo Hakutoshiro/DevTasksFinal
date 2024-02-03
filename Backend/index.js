@@ -124,6 +124,8 @@ app.post('/addtask',async (req,res)=>{
                 } catch (error) {
                     res.status(422).json('err')
                 }
+            }else {
+                res.json("Empty UserID")
             }
         })
     
@@ -157,6 +159,8 @@ app.get('/dataretreival',async (req,res)=>{
                 } catch (error) {
                     res.status(422).json('err');
                 }
+            }else {
+                res.json("Empty UserID")
             }
         })
         
